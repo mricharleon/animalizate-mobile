@@ -2,23 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class IconContainer extends StatelessWidget {
-  const IconContainer({Key? key}) : super(key: key);
+  final double size;
+  const IconContainer({Key? key, required this.size})
+      : assert(size > 0),
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    double paddingValue = size * 0.15;
     return Container(
-      width: 120,
-      height: 120,
+      width: size,
+      height: size,
       decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(20),
-          boxShadow: const [BoxShadow(color: Colors.black26, blurRadius: 10)]),
-      padding: const EdgeInsets.all(20),
+          borderRadius: BorderRadius.circular(size * .15),
+          boxShadow: const [
+            BoxShadow(
+                color: Colors.black12, blurRadius: 20, offset: Offset(0, 15))
+          ]),
+      padding: EdgeInsets.all(paddingValue),
       child: Center(
           child: SvgPicture.asset(
         'assets/logotipo.svg',
-        width: 80,
-        height: 80,
+        width: size * .6,
+        height: size * .6,
       )),
     );
   }

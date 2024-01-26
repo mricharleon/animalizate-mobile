@@ -38,7 +38,12 @@ class _HomePageState extends State<HomePage> {
                   size: orangeSize,
                   colors: const [Colors.orange, Colors.deepOrangeAccent],
                 )),
-            Positioned(top: 130, child: IconContainer())
+            Positioned(
+              top: pinkSize * .4,
+              child: const IconContainer(
+                size: 75,
+              ),
+            )
           ],
         ),
       ),
